@@ -1,4 +1,5 @@
 ﻿using E_Shop.DAL.Entities;
+using E_Shop.DAL.EntitiesConfigurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace E_Shop.DAL.Context
@@ -14,6 +15,11 @@ namespace E_Shop.DAL.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductImageConfiguration());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
     }
