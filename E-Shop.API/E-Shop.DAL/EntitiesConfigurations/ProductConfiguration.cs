@@ -18,7 +18,8 @@ namespace E_Shop.DAL.EntitiesConfigurations
                 .IsRequired();
 
             builder.Property(x => x.Price)
-                .IsRequired();
+                .IsRequired()
+                .HasColumnType("decimal(18,2)");
 
             builder.HasMany(x=>x.Images)
                 .WithOne(x=>x.Product)
