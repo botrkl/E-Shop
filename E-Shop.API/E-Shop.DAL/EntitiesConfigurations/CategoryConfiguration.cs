@@ -18,6 +18,11 @@ namespace E_Shop.DAL.EntitiesConfigurations
                 .WithOne(x => x.Category)
                 .HasForeignKey(x => x.CategoryId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasOne(x => x.ParentCategory)
+                .WithMany(x => x.SubCategories)
+                .HasForeignKey(x => x.ParentCategoryId)
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
