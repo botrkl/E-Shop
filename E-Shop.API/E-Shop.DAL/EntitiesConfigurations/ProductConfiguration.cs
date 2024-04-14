@@ -21,6 +21,20 @@ namespace E_Shop.DAL.EntitiesConfigurations
                 .IsRequired()
                 .HasColumnType("decimal(18,2)");
 
+            builder.Property(x => x.PreviewImage)
+                .IsRequired();
+
+            builder.Property(x => x.Amount)
+                .IsRequired();
+
+            builder.Property(x => x.Size)
+                .IsRequired()
+                .HasMaxLength(5);
+
+            builder.Property(x => x.Color)
+                .IsRequired()
+                .HasMaxLength(15);
+
             builder.HasMany(x=>x.Images)
                 .WithOne(x=>x.Product)
                 .HasForeignKey(x=>x.ProductId)
