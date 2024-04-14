@@ -4,7 +4,7 @@ using E_Shop.DAL.Repositories.Interfaces;
 
 namespace E_Shop.DAL.Repositories.Classes
 {
-    internal class ProductImageRepository : BaseRepository<ProductImage>, IProductImageRepository
+    public class ProductImageRepository : BaseRepository<ProductImage>, IProductImageRepository
     {
         private EShopDbContext _dbContext;
         public ProductImageRepository(EShopDbContext dbContext) : base(dbContext)

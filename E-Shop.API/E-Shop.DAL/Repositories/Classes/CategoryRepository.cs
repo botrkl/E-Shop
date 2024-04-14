@@ -4,7 +4,7 @@ using E_Shop.DAL.Repositories.Interfaces;
 
 namespace E_Shop.DAL.Repositories.Classes
 {
-    internal class CategoryRepository : BaseRepository<Category>, ICategoryRepository
+    public class CategoryRepository : BaseRepository<Category>, ICategoryRepository
     {
         private EShopDbContext _dbContext;
         public CategoryRepository(EShopDbContext dbContext) : base(dbContext)
