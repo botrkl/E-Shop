@@ -35,6 +35,10 @@ namespace E_Shop.DAL.EntitiesConfigurations
                 .IsRequired()
                 .HasMaxLength(15);
 
+            builder.Property(x => x.Audience)
+                .IsRequired()
+                .HasMaxLength(5);
+
             builder.HasMany(x=>x.Images)
                 .WithOne(x=>x.Product)
                 .HasForeignKey(x=>x.ProductId)
